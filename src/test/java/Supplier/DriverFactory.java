@@ -3,6 +3,7 @@ package Supplier;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -15,6 +16,11 @@ public class DriverFactory {
     private static final Supplier<WebDriver> CHROMESUPPLIER = () -> {
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
+    };
+
+    private static final Supplier<WebDriver> CHROMEHEADLESS = () -> {
+        WebDriverManager.chromedriver().setup();
+        return new ChromeDriver(new ChromeOptions().setHeadless(true));
     };
 
     private static final Supplier<WebDriver> FIREFOXSUPPLIER = () -> {
@@ -31,6 +37,7 @@ public class DriverFactory {
 
     static {
         DRIVERPOOL.put("chrome",CHROMESUPPLIER);
+        DRIVERPOOL.put("chrome-headless",CHROMEHEADLESS);
         DRIVERPOOL.put("firefox",FIREFOXSUPPLIER);
         DRIVERPOOL.put("edge",EDGESUPPLIER);
     }
