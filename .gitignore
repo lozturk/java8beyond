@@ -1,0 +1,5 @@
+#Ignore target folder
+/target
+
+#Ignore iml file
+java8beyond.iml
