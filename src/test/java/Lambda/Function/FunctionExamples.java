@@ -1,4 +1,4 @@
-package Function;
+package Lambda.Function;
 
 import java.util.function.Function;
 
@@ -7,7 +7,7 @@ public class FunctionExamples {
     public static void main(String[] args) {
         // 1
         // Lambda notation
-        // Function<String, Integer> giveLength = str -> str.length();
+        // Lambda.Function<String, Integer> giveLength = str -> str.length();
         // Method reference
         Function<String, Integer> giveLength = String::length;
         System.out.println("Length of string ::"+giveLength.apply("Levent"));

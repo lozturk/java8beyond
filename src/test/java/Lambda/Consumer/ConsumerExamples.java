@@ -1,6 +1,5 @@
-package Consumer;
+package Lambda.Consumer;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -23,7 +22,7 @@ public class ConsumerExamples {
         allDrivers.add("edge");
         allDrivers.add("ie");
         allDrivers.add("remote");
-//        Consumer <String> displayDrivers = (d) -> System.out.println(d); // Lambda
+//        Lambda.Consumer <String> displayDrivers = (d) -> System.out.println(d); // Lambda
         Consumer <String> displayDrivers = System.out::println;            // Method reference
         allDrivers.forEach(displayDrivers);
 

@@ -1,12 +1,12 @@
-package Function;
+package Lambda.Function;
 
-import Supplier.DriverFactory;
+import Lambda.Supplier.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
 /*
 Functions are used for transformation
-Function<T,R> -> If you give something, it will convert & return another type
+Lambda.Function<T,R> -> If you give something, it will convert & return another type
 It comes with apply() method
 Lambda chaining andThen(function), compose(function)
 BiType -> BiFunction<T,U,R> ; T & U are 2 different input types and R is the return type

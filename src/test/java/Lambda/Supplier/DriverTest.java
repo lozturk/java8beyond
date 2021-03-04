@@ -1,7 +1,6 @@
-package Supplier;
+package Lambda.Supplier;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 
 public class DriverTest {

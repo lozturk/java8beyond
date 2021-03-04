@@ -1,4 +1,4 @@
-package Supplier;
+package Lambda.Supplier;
 
 import org.testng.annotations.Test;
 

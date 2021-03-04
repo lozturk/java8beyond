@@ -1,4 +1,4 @@
-package RunnableAndCallable;
+package Lambda.RunnableAndCallable;
 
 import com.google.common.util.concurrent.Uninterruptibles;
 

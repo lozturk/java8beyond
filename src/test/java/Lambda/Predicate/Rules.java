@@ -1,4 +1,4 @@
-package Predicate;
+package Lambda.Predicate;
 
 import org.openqa.selenium.WebElement;
 

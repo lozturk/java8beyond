@@ -1,4 +1,4 @@
-package RunnableAndCallable;
+package Lambda.RunnableAndCallable;
 
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;
