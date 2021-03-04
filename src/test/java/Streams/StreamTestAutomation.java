@@ -12,7 +12,6 @@ public class StreamTestAutomation {
 
     private WebDriver driver;
 
-
     @BeforeClass
     @Parameters("browser")
     public void setUp(@Optional("chrome-headless") String browser){
@@ -30,7 +29,7 @@ public class StreamTestAutomation {
                 .map(e->e.getText().trim().toUpperCase())
                 .forEach(System.out::println);
 
-        System.out.println("------------------------------------------");
+        System.out.println("------------Lets make some improvements on the code as below----------");
 
         links.stream()
                 .map(WebElement::getText)
@@ -39,6 +38,21 @@ public class StreamTestAutomation {
                 .filter(s-> !s.contains("s"))
                 .map(String::toUpperCase)
                 .forEach(System.out::println);
+    }
+
+    @Test
+    public void emptyListOfStream(){
+        List<WebElement> links = driver.findElements(By.tagName("a2345563458932e"));
+        System.out.println("Size of list:: "+ links.size());
+        links.stream()
+                .filter(e-> e.getText().trim().length() > 0)
+                .filter(e-> !e.getText().toLowerCase().contains("s"))
+                .map(e->e.getText().trim().toUpperCase())
+                .forEach(System.out::println);
+
+        // Since the list is empty, all those stream method will not be executed but there will be no exception either.
+        // Stream only works, if there are any elemetns in the list.
+        // BENEFIT OF FUNCTIONAL PROGRAMING : CODE IS EASILY READABLE & MANAGEABLE
     }
 
     @AfterClass
