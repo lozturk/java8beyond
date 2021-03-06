@@ -1,14 +1,10 @@
 package Streams.Assignments.CheckboxSelection;
 
 import Lambda.Supplier.DriverFactory;
-import com.google.common.util.concurrent.Uninterruptibles;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.*;
-
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class ChangingRequirementsAsPredicates {
