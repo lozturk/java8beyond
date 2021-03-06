@@ -3,7 +3,7 @@ package Streams.TerminalOperations;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnyMatch {
+public class NoneMatch {
     public static void main(String[] args) {
         List<String> objects = new ArrayList<>();
         objects.add("apple");
@@ -14,8 +14,8 @@ public class AnyMatch {
         System.out.println(
                 objects.stream()
                         .filter(s->s.length() > 3)      // there are 2 elements which satisfy the condition
-                        .anyMatch(s->s.contains("e"))   // there is 1 element which satisfies the condition
-                // result is true
+                        .noneMatch(s->s.contains("e"))  // there is NO element which satisfy the condition
+                // result is false
         );
         // anyMatch() returns boolean
 
