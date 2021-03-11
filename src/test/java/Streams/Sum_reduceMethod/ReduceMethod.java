@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-public class SumTest {
+public class ReduceMethod {
 
     public static void main(String[] args) {
 
