@@ -15,14 +15,21 @@ public class IntStreamSample {
         // It could be Stream<Integer>, Stream<String>, etc...
 
         int sum = nums.stream()
-                .mapToInt(num->num)
+                .mapToInt(num->num)   // converting Ref type stream to primitive type stream
                 .sum();
         System.out.println("Sum:: " + sum);
 
         OptionalDouble average = nums.stream()
-                .mapToDouble(num -> num)
+                .mapToDouble(num -> num)    // converting Ref type stream to primitive type stream
                 .average();
         System.out.println("Average:: " + average);
+
+        int newSum = nums.stream()
+                .mapToLong(a->a)
+                .mapToInt(b-> (int) b) // since we can't convert from long to int it gives comp. error
+                .sum();                // so we need to explicitly cast to int.
+
+        System.out.println("NewSum : "+ newSum);
 
     }
 
