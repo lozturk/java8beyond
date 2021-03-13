@@ -24,7 +24,7 @@ public class PaymentScreenTests {
 
     @Test(dataProvider = "testData")
     public void paymentScreenTests(Consumer<PaymentScreenPage> consumer){
-        paymentScreenPage.goTo();  // for every test, refresh the page
+        paymentScreenPage.goTo();            // for every test, refresh the page
         consumer.accept(paymentScreenPage);  // and do the test (consumer accepts paymentScreen Object)
 
         Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
@@ -41,8 +41,6 @@ public class PaymentScreenTests {
               invalidCC.andThen(buy).andThen(failedPurchase),
               invalidCC.andThen(discountedCoupon).andThen(buy).andThen(failedPurchase),
               buy.andThen(failedPurchase)
-
-
 
       };
     }
