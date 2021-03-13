@@ -3,7 +3,6 @@ package Streams.PrimitiveStreams;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.OptionalDouble;
 import java.util.stream.IntStream;
 
 public class IntStreamForLoop {
@@ -15,7 +14,10 @@ public class IntStreamForLoop {
 
         // IntStream will replace our traditional for loop
 
-        IntStream.rangeClosed(1,10)
+        IntStream.rangeClosed(1,10)                                 // 10 is inclusive
+                .forEach(i-> System.out.println("Levent : " + i));
+
+        IntStream.range(1,10)                                       // 10 is exclusive
                 .forEach(i-> System.out.println("Levent : " + i));
 
         IntStream.rangeClosed(1,nums.size())
