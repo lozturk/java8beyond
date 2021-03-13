@@ -51,4 +51,51 @@ public class ConsumerExamples {
 
     }
 
+    @Test
+    public void consumerTest(){
+
+        Consumer <String> printAcceptedString = System.out::println;
+        printAcceptedString.accept("Levent");
+
+        List<String> countries = new ArrayList<>();
+        countries.add("United States");
+        countries.add("India");
+        countries.add("Turkey");
+        countries.add("Afghanistan");
+
+        /**
+         * This is the first style
+         */
+
+        for (String country: countries) {
+            System.out.println(country.toUpperCase());
+        }
+
+        /**
+         * This is the second style.
+         * Data comes from list and
+         * behaviour is specified inside the foreach method
+         */
+
+        Consumer<String> countryBehaviourOne = (s) -> System.out.println(s.toUpperCase());
+        countries.forEach(countryBehaviourOne);
+
+        /**
+         * This is the third style.
+         * Data comes from list and
+         * behaviour is specified inside the foreach method
+         */
+
+        countries.forEach(s -> System.out.println(s.toUpperCase()));
+        Map<String,Integer> stringIntegerMap = new HashMap<>();
+        Consumer<String> getLength = s -> {
+            int lngth = s.length();
+            stringIntegerMap.put(s,lngth);
+        };
+
+        getLength.accept("Levent");
+        countries.forEach(getLength);
+        System.out.println(stringIntegerMap);
+    }
+
 }
