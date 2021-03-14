@@ -1,7 +1,5 @@
 package java9;
 
-import org.testng.annotations.Test;
-
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
