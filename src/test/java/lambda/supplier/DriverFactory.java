@@ -6,7 +6,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -41,6 +40,15 @@ public class DriverFactory {
         DRIVERPOOL.put("firefox",FIREFOXSUPPLIER);
         DRIVERPOOL.put("edge",EDGESUPPLIER);
     }
+
+
+    // below is another notation of the map
+    private static final Map<String, Supplier<WebDriver>> DRIVER_POOL = Map.of(
+            "chrome",CHROMESUPPLIER,
+            "firefox",FIREFOXSUPPLIER,
+            "chrome",CHROMESUPPLIER,
+            "edge",EDGESUPPLIER
+    );
 
     public static WebDriver getDriver(String browser){
         return DRIVERPOOL.get(browser).get();
