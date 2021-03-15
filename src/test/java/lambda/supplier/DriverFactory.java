@@ -42,11 +42,11 @@ public class DriverFactory {
     }
 
 
-    // below is another notation of the map
+    // below is another notation of the map (IMMUTABLE MAP)
     private static final Map<String, Supplier<WebDriver>> DRIVER_POOL = Map.of(
             "chrome",CHROMESUPPLIER,
             "firefox",FIREFOXSUPPLIER,
-            "chrome",CHROMESUPPLIER,
+            "chrome-headless",CHROMEHEADLESS,
             "edge",EDGESUPPLIER
     );
 
