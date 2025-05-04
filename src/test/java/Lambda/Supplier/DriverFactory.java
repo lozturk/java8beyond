@@ -20,7 +20,9 @@ public class DriverFactory {
 
     private static final Supplier<WebDriver> CHROMEHEADLESS = () -> {
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver(new ChromeOptions().setHeadless(true));
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        return new ChromeDriver(options);
     };
 
     private static final Supplier<WebDriver> FIREFOXSUPPLIER = () -> {

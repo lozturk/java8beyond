@@ -1,8 +1,11 @@
 package Lambda.Predicate;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /*
 Lambda.Predicate use generic input types
@@ -29,6 +32,29 @@ public class PredicateExamples {
                 isGT2.negate().test(78)
 
         );
+
+    }
+
+    @Test
+    public void calculateGreaterTenAndEvenNumbersInAGivenList(){
+        List<Integer> input = List.of(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15);
+        List<Integer> expected = List.of(10,12,14);
+        calculate(input).forEach(System.out::println);
+        Assert.assertEquals(calculate(input), expected,
+                "The list does not contain the expected values"
+        );
+    }
+
+    public List<Integer> calculate(List<Integer> numbers){
+        Predicate<Integer> isGT10 = (i) -> i >= 10;
+        Predicate<Integer> isEven = (i) -> i % 2 == 0;
+
+        return numbers.stream()
+                .filter(isGT10.and(isEven))
+                .collect(Collectors.toList());
+//        return numbers.stream()
+//                .filter(i -> i >= 10 && i % 2 == 0)
+//                .collect(Collectors.toList());
 
     }
 

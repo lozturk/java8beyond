@@ -3,3 +3,6 @@
 
 #Ignore iml file
 java8beyond.iml
+
+#Ignore project files
+.idea/*.xml
